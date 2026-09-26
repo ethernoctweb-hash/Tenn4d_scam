@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#120000">
+  <title>Jackpot Terpilih</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-1"></div>
+  <div class="ambient ambient-2"></div>
+
+  <main class="page">
+    <section class="jackpot-shell" aria-label="Premium Jackpot Data">
+      <div class="gold-frame">
+        <div class="panel">
+
+          <header class="topbar jackpot-header-text" aria-label="Header Jackpot">
+            <div class="brand-title">
+              <span id="providerName" class="provider">PRAGMATIC PLAY</span>
+              <span class="divider">|</span>
+              <span id="mainTitle" class="main-title">MEMBER TERPILIH</span>
+            </div>
+            <span id="pageNumber" class="header-data-hidden">1</span>
+            <button id="prevPage" class="header-control-hidden" aria-label="Halaman sebelumnya">‹</button>
+            <button id="nextPage" class="header-control-hidden" aria-label="Halaman berikutnya">›</button>
+            <button id="closePanel" class="header-control-hidden" aria-label="Tutup">×</button>
+          </header>
+
+          <div class="table-wrap">
+            <table id="dataTable">
+              <thead><tr id="tableHead"></tr></thead>
+              <tbody id="tableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="external-actions">
+      <button class="custom-btn" id="openCustom">
+        <span class="gear">⚙</span>
+        CUSTOM
+      </button>
+    </div>
+  </main>
+
+  <div class="modal-backdrop" id="customModal" aria-hidden="true">
+    <section class="custom-modal" role="dialog" aria-modal="true" aria-labelledby="customTitle">
+      <div class="modal-header">
+        <div>
+          <div class="eyebrow">PREMIUM TABLE CONTROL</div>
+          <h2 id="customTitle">Custom Panel</h2>
+        </div>
+        <button class="modal-close" id="closeCustom" aria-label="Tutup">×</button>
+      </div>
+
+      <div class="modal-content">
+        <section class="settings-section">
+          <h3>A. Pengaturan Header</h3>
+          <div class="form-grid three">
+            <label>Judul
+              <input id="inputTitle" type="text">
+            </label>
+            <label>Provider
+              <input id="inputProvider" type="text">
+            </label>
+            <label>Nomor halaman
+              <input id="inputPage" type="number" min="1" step="1">
+            </label>
+          </div>
+          <div class="time-settings">
+            <label>Waktu & Tanggal
+              <select id="timeMode">
+                <option value="realtime">Real-time</option>
+                <option value="custom">Custom</option>
+              </select>
+            </label>
+            <label id="customDateWrap">Tanggal custom
+              <input id="customDate" type="date">
+            </label>
+            <label id="customTimeWrap">Waktu custom
+              <input id="customTime" type="time">
+            </label>
+          </div>
+        </section>
+
+        <section class="settings-section">
+          <h3>B. Pengaturan Nama Kolom</h3>
+          <div class="columns-editor" id="columnsEditor"></div>
+        </section>
+
+        <section class="settings-section">
+          <div class="data-heading">
+            <div>
+              <h3>C. Pengaturan Data</h3>
+              <p>Edit semua isi baris. Status punya pilihan Succses/Menunggu. Waktu & tanggal dapat mengikuti real-time atau dibuat custom.</p>
+            </div>
+            <button class="add-row-btn" id="addRow">+ Tambah Baris</button>
+          </div>
+          <div class="status-note">
+            Status hanya memiliki 2 pilihan: <b>Succses</b> dan <b>Menunggu</b>.
+            Warna otomatis hijau dan kuning.
+          </div>
+          <div class="data-editor-wrap">
+            <table class="editor-table">
+              <thead><tr id="editorHead"></tr></thead>
+              <tbody id="editorBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <div class="modal-footer">
+        <button class="reset-btn" id="resetDemo">Reset Demo</button>
+        <div class="footer-right">
+          <button class="cancel-btn" id="cancelCustom">Batal</button>
+          <button class="save-btn" id="saveCustom">Simpan Custom</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
